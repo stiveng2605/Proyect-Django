@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center text-primary mb-4">Lista de Categorías</h1>
+
+{% if categories %}
+<div id="lista" class="d-flex flex-wrap justify-content-center gap-4">
+  {% for category in categories %}
+    <div class="card proveedor-card">
+      <div class="card-body">
+        <h5 class="card-title">{{ category.name }}</h5>
+        <p class="card-text">Descripción:</p>
+        <p><strong>{{ category.description }}</strong></p>
+        
+        <div class="d-flex gap-2 mt-3">
+          <a href="{% url 'category_delete' category.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+          <a href="{% url 'category_update' category.pk %}" class="btn btn-sm btn-warning">Editar</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+  <p class="text-muted text-center">No hay Categorías registradas.</p>
+{% endif %}
+
+<div class="text-center mt-5">
+  <a href="{% url 'category_create' %}" class="btn btn-primary me-2">Agregar Categoría</a>
+</div>
+{% endblock %}

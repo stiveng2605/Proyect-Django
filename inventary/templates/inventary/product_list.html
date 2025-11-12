@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center text-primary mb-4">Lista de Productos</h1>
+
+{% if products %}
+<div id="lista" class="d-flex flex-wrap justify-content-center gap-4">
+  {% for product in products %}
+    <div class="card proveedor-card">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">Cantidad:</p>
+        <p><strong>{{ product.quantity }}</strong></p>
+        
+        <div class="d-flex gap-2 mt-3">
+          <a href="{% url 'product_detail' product.pk %}" class="btn btn-sm btn-info">Ver</a>
+          <a href="{% url 'product_delete' product.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+          <a href="{% url 'product_update' product.pk %}" class="btn btn-sm btn-warning">Editar</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+  <p class="text-muted text-center">No hay Productos registrados.</p>
+{% endif %}
+
+<div class="text-center mt-5">
+  <a href="{% url 'product_create' %}" class="btn btn-primary me-2">Agregar Producto</a>
+</div>
+{% endblock %}

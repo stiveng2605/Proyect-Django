@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="delete-confirmation-card d-flex flex-column justify-content-center align-items-center">
+
+    <h2 class="delete-title">¿Estás seguro de Eliminar?</h2>
+    <p>{{product.name}}</p>
+    <p class="delete-warning">Esta acción no se puede deshacer.</p>
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="delete-actions">
+        <button type="submit" class="btn btn-danger delete-btn">
+          🗑️ Sí, eliminar
+        </button>
+        <a href="{% url 'product_list' %}" class="btn btn-outline-secondary cancel-btn">
+          Cancelar
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

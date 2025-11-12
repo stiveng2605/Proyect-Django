@@ -1,0 +1,148 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+main {
+  flex: 1;
+}
+
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0d6efd;
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#nav h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 15px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+#nav a:hover {
+  background-color: white;
+  color: #0d6efd;
+  transform: translateY(-2px);
+}
+
+.proveedor-card {
+  width: 260px;
+  border: none;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 20px;
+}
+
+.proveedor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.proveedor-card .card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.proveedor-card h5 {
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.proveedor-card p {
+  color: #555;
+  font-size: 15px;
+}
+
+a.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button.btn-primary {
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+button.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-outline-secondary {
+  border-radius: 25px;
+}
+
+form p {
+  margin-bottom: 1rem;
+}
+
+form label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+}
+
+#lista {
+  margin-top: 30px;
+}
+
+footer {
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+footer p {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}

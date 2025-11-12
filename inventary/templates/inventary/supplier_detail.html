@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card shadow-lg p-4 proveedor-card text-center" style="max-width: 500px; width: 100%;">
+    <h2 class="text-primary mb-3">Detalles del Proveedor</h2>
+    <h3 class="mb-4 text-dark fw-bold">{{ supplier.name }}</h3>
+
+    <p class="mb-2"><strong>Encargado:</strong> {{ supplier.contact_person }}</p>
+    <p class="mb-2"><strong>Teléfono:</strong> {{ supplier.phone }}</p>
+    <p class="mb-4"><strong>Correo:</strong> <a href="mailto:{{ supplier.email }}" class="text-decoration-none text-dark">{{ supplier.email }}</a></p>
+
+    <a href="{% url 'supplier_list' %}" class="btn btn-outline-primary mt-3">← Volver a la lista de Proveedores</a>
+  </div>
+</div>
+{% endblock %}

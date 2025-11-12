@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center text-primary mb-4">Lista de Proveedores</h1>
+
+{% if suppliers %}
+<div id="lista" class="d-flex flex-wrap justify-content-center gap-4">
+  {% for supplier in suppliers %}
+    <div class="card proveedor-card">
+      <div class="card-body">
+        <h5 class="card-title">{{ supplier.name }}</h5>
+        <p class="card-text">Encargado:</p>
+        <p><strong>{{ supplier.contact_person }}</strong></p>
+        
+        <div class="d-flex gap-2 mt-3">
+          <a href="{% url 'supplier_detail' supplier.pk %}" class="btn btn-sm btn-info">Ver</a>
+          <a href="{% url 'supplier_delete' supplier.pk %}" class="btn btn-sm btn-danger">Eliminar</a>
+          <a href="{% url 'supplier_update' supplier.pk %}" class="btn btn-sm btn-warning">Editar</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+  <p class="text-muted text-center">No hay Proveedores registrados.</p>
+{% endif %}
+
+<div class="text-center mt-5">
+  <a href="{% url 'supplier_create' %}" class="btn btn-primary me-2">Agregar Proveedor</a>
+</div>
+{% endblock %}
